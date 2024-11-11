@@ -47,5 +47,6 @@ export class ArtistsController {
     const newAlbums = db.albums.filter((album) => album.artistId !== id);
     db.albums = newAlbums;
     return;
+ 
   }
 }
