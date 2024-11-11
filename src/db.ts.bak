@@ -1,10 +1,10 @@
 import { v4 as uuid } from 'uuid';
 
-import { User } from './models/User';
-import { Album } from './models/Album';
-import { Track } from './models/Track';
-import { Artist } from './models/Artist';
-import { Favorites } from './models/Favorites';
+import User from './models/User';
+import Album from './models/Album';
+import Track from './models/Track';
+import Artist from './models/Artist';
+import Favorites from './models/Favorites';
 
 interface Db {
   users: User[];
