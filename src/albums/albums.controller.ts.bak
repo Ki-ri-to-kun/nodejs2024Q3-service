@@ -1,13 +1,4 @@
-import {
-  Controller,
-  Get,
-  Post,
-  Put,
-  Delete,
-  Param,
-  Body,
-  HttpCode,
-} from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param,  Body, HttpCode, } from '@nestjs/common';
 import { db } from '../db';
 import { v4 as uuid } from 'uuid';
 
@@ -20,13 +11,13 @@ export class AlbumsController {
 
   @Get(':id')
   public async getAlbumById(@Param('id') id: string) {
-    const album = db.albums.find((a) => a.id === id);
+   const album = db.albums.find((a) => a.id === id);
     return album;
   }
 
   @Post()
   public async createAlbum(@Body() album: any) {
-    const newAlbum = { id: uuid(), ...album };
+     const newAlbum = { id: uuid(), ...album };
     db.albums.push(newAlbum);
     return newAlbum;
   }
@@ -41,11 +32,11 @@ export class AlbumsController {
     return updatedAlbum;
   }
 
-  @HttpCode(204)
+	  @HttpCode(204)
   @Delete(':id')
   public async deleteAlbum(@Param('id') id: string) {
     const oldAlbumIndex = db.albums.findIndex((t) => t.id === id);
-    db.albums.splice(oldAlbumIndex, 1);
+    db.albums.splice(oldTrackIndex, 1);
     return;
   }
 }
