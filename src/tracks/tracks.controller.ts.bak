@@ -27,7 +27,7 @@ export class TracksController {
   @Post()
   public async createTrack(@Body() track: any) {
     const newTrack = { id: uuid(), ...track };
-    db.tracks.push(newTrack);
+    db.users.push(newTrack);
     return newTrack;
   }
 
